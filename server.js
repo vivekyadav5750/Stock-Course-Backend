@@ -13,11 +13,19 @@ app.use(express.urlencoded({ extended: true }));
 const connectDB = require('./src/config/db');
 connectDB();
 
-//routes
-
+//routes imports
 const authRoutes = require("./src/Routes/auth.route");
-app.use("/api/auth", authRoutes)
+const courseRouter = require("./src/Routes/course.route")
 
+
+
+
+
+
+
+//Routes
+app.use("/api/auth", authRoutes)
+app.use("/api/course", courseRouter)
 
 
 // 3️⃣ Start server
