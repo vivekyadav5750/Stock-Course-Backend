@@ -15,7 +15,9 @@ connectDB();
 
 //routes imports
 const authRoutes = require("./src/Routes/auth.route");
-const courseRouter = require("./src/Routes/course.route")
+const courseRouter = require("./src/Routes/course.route");
+const moduleRouter = require("./src/Routes/module.route");
+const lessonRouter = require("./src/Routes/lesson.route");
 
 
 
@@ -24,8 +26,11 @@ const courseRouter = require("./src/Routes/course.route")
 
 
 //Routes
-app.use("/api/auth", authRoutes)
-app.use("/api/course", courseRouter)
+app.use("/api/auth", authRoutes);
+app.use("/api/course", courseRouter);
+app.use("/api/module", moduleRouter);
+app.use("/api/lesson", lessonRouter);
+
 
 
 // 3️⃣ Start server
